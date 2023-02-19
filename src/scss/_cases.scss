@@ -1,0 +1,177 @@
+.section-cases {
+  padding: 150px 0px;
+  @include lg {
+    padding: 100px 0px;
+  }
+  @include md {
+    padding: 50px 0px;
+  }
+  @include sm {
+    padding: 30px 0px;
+  }
+}
+.cases {
+  &__container {
+    max-width: 1525px;
+  }
+
+  &__top {
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    @include md {
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    max-width: 705px;
+    font-family: "Cabinet Grotesk";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 54px;
+    line-height: 111%;
+    color: $primary;
+
+    @include lg {
+      font-size: 35px;
+    }
+    @include md {
+      text-align: center;
+      max-width: 100%;
+    }
+    @include xs {
+      font-size: 30px;
+    }
+  }
+
+  &__button {
+    flex: 0 0 240px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    text-align: center;
+    color: $colorWhite;
+    padding: 24px 32px;
+    border-radius: 60px;
+    background: linear-gradient(360deg, #f2793f 0%, #ffb260 116.67%);
+    position: relative;
+    &::after {
+      content: "";
+      opacity: 0;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: inherit;
+      transition: opacity 0.7s;
+      background: linear-gradient(180deg, #2f82fe 0%, #1551aa 100%);
+    }
+
+    @include sm {
+      flex: 1 1 100%;
+    }
+    &:hover:after {
+      opacity: 1;
+    }
+  }
+  &__swiper {
+    
+    .swiper-slide {
+      @include sm {
+        padding: 0px 15px;
+      }
+    }
+
+    .slide-swiper {
+      transition: 0.3s ease;
+      &:hover {
+        .slide-swiper__decor {
+          opacity: 1;
+          z-index: 10;
+        }
+      }
+      &__image {
+        position: relative;
+        max-width: 100%;
+        width: 100%;
+        height: auto;
+      }
+
+      &__decor {
+        position: absolute;
+        padding: 50px;
+        left: 4%;
+        top: 4%;
+        width: 92%;
+        height: 92%;
+        background: rgba(8, 10, 14, 0.15);
+        mix-blend-mode: normal;
+        backdrop-filter: blur(15px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        opacity: 0;
+        z-index: -1;
+        transition: 0.3s ease;
+        @media (max-width: 1250px) {
+          padding: 20px;
+        }
+        @include sm {
+          left: 6%;
+          width: 88%;
+        }
+        @include xs {
+          left: 7%;
+          width: 86%;
+        }
+      }
+
+      &__title {
+        font-family: "Cabinet Grotesk";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 120%;
+        color: $colorWhite;
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+        @media (max-width: 1550px) {
+          font-size: 35px;
+        }
+        @media (max-width: 1440px) {
+          font-size: 30px;
+          line-height: 110%;
+        }
+        @media (max-width: 1050px) {
+          font-size: 25px;
+        }
+      }
+
+      &__button {
+        display: inline-flex;
+        padding: 24px 32px;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 100%;
+        color: $colorWhite;
+        background-image: linear-gradient(180deg, transparent, #1551aa);
+        background-size: 100% 100%;
+        background-color: #2f82fe;
+        transition: 0.7s ease 0s;
+        border-radius: 60px;
+        &:hover {
+          background-size: 100% 500%;
+          background-color: #f2793f;
+        }
+      }
+    }
+  }
+}

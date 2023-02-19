@@ -1,0 +1,154 @@
+.section-advices {
+  padding: 150px 0px;
+  @include lg {
+    padding: 100px 0px;
+  }
+  @include md {
+    padding: 50px 0px;
+  }
+  @include sm {
+    padding: 30px 0px;
+  }
+}
+.advices {
+  &__container {
+    max-width: 1525px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 67px;
+    @include md {
+      flex-wrap: wrap;
+      margin-bottom: 0px;
+    }
+  }
+
+  &__leftContent {
+    flex: 0 1 55%;
+    @include md {
+      text-align: center;
+      flex: 1 1 100%;
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  &__rightContent {
+    text-align: end;
+    flex: 0 1 45%;
+    @include md {
+      flex: 1 1 100%;
+      text-align: center;
+    }
+  }
+
+  &__title {
+    font-family: "Cabinet Grotesk";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 54px;
+    line-height: 111%;
+    color: $primary;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    @include lg {
+      font-size: 40px;
+    }
+    @include md {
+      font-size: 30px;
+    }
+  }
+
+  &__subtitle {
+    line-height: 175%;
+    color: $secondary;
+    @include md {
+      text-align: justify;
+      line-height: 130%;
+    }
+  }
+
+  &__button {
+    position: relative;
+    display: inline-flex;
+    padding: 24px 32px;
+    background: linear-gradient(180deg, #2f82fe 0%, #1551aa 100%);
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    text-align: center;
+    color: #ffffff;
+    &::after {
+      content: "";
+      opacity: 0;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      border-radius: inherit;
+      transition: opacity 0.7s;
+      background: linear-gradient(360deg, #f2793f 0%, #ffb260 116.67%);
+    }
+    &:hover::after {
+      opacity: 1;
+    }
+    @include xs {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    @include md {
+      margin-top: 20px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    max-width: 100%;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+      @include lg {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  &__info {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: $primary;
+    @include lg {
+      font-size: 20px;
+      line-height: 120%;
+    }
+    @include md {
+      font-size: 18px;
+    }
+  }
+
+  &__text {
+    line-height: 175%;
+    color: $secondary;
+    @include lg {
+      line-height: 140%;
+    }
+  }
+}

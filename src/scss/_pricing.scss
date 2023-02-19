@@ -1,0 +1,182 @@
+.section-pricing {
+  background: url("../img/pricing/bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.pricing-blur {
+  padding: 150px 0px;
+  background: rgb(8 10 14 / 90%);
+  @media (max-width: 1100px) {
+    padding: 100px 0px;
+  }
+  @include md {
+    padding: 50px 0px;
+  }
+  @include sm {
+    padding: 30px 0px;
+  }
+}
+
+.pricing {
+  &__top {
+    text-align: center;
+    &:not(:last-child) {
+      margin-bottom: 50px;
+      @include lg {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
+  &__title {
+    font-family: "Cabinet Grotesk";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 54px;
+    line-height: 111%;
+    color: $colorWhite;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+      @include xs {
+        margin-bottom: 15px;
+      }
+    }
+    @include xs {
+      font-size: 30px;
+    }
+  }
+
+  &__subtitle {
+    line-height: 175%;
+    color: $colorWhite;
+    @include sm {
+      text-align: justify;
+      line-height: 150%;
+    }
+  }
+  &__items {
+    display: flex;
+    flex-direction: column;
+    max-width: 1290px;
+    margin: 0 auto;
+  }
+  &__row {
+    display: flex;
+    align-items: center;
+    padding: 41px 50px;
+    position: relative;
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: rgba(85, 93, 101, 0.3);
+      backdrop-filter: blur(25px);
+    }
+    @include md {
+      padding: 30px 40px;
+    }
+    @include sm {
+      padding: 20px 20px;
+    }
+  }
+}
+
+.row-pricing {
+  &__box {
+    display: flex;
+    gap: 15px;
+    z-index: 3;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    @media (max-width: 1100px) {
+      flex-wrap: wrap;
+      column-gap: 100px;
+    }
+    @include lg {
+      column-gap: 60px;
+    }
+    @include sm {
+      justify-content: center;
+      column-gap: 0px;
+      gap: 6px;
+    }
+  }
+  &__name {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: $colorWhite;
+    width: 142px;
+    @include sm {
+      line-height: 110%;
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__price {
+    font-family: "Cabinet Grotesk";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 120%;
+    color: $colorWhite;
+    min-width: 225px;
+    @include sm {
+      font-size: 30px;
+      text-align: center;
+    }
+  }
+
+  &__text {
+    line-height: 175%;
+    color: $colorWhite;
+    max-width: 410px;
+    @include md {
+      max-width: 100%;
+    }
+    @include sm {
+      text-align: justify;
+      line-height: 150%;
+    }
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    @include xs {
+      width: 100%;
+    }
+  }
+
+  &__button {
+    background: linear-gradient(180deg, #2f82fe 0%, #1551aa 100%) border-box;
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    min-width: 150px;
+    padding: 24px 5px;
+    border: 1px solid #ffffff;
+    border-radius: 60px;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    text-align: center;
+    color: $colorWhite;
+    transition: 0.3s ease;
+    &:hover {
+      background-size: 100% 100%;
+    }
+    @include xs {
+      width: 100%;
+    }
+  }
+}

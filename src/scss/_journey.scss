@@ -1,0 +1,76 @@
+.section-journey {
+  padding: 150px 0px;
+  @include lg {
+    padding: 100px 0px;
+  }
+  @include md {
+    padding: 50px 0px;
+  }
+  @include sm {
+    padding: 30px 0px;
+  }
+}
+.journey {
+  &__container {
+    max-width: 1520px;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: minmax(auto, 553px) minmax(auto, 620px);
+    justify-content: space-between;
+    gap: 20px;
+    &:not(:last-child) {
+      margin-bottom: 64px;
+      @include md {
+        margin-bottom: 30px;
+      }
+    }
+    @include md {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  &__image {
+    max-width: 100%;
+  }
+
+  &__title {
+    font-family: "Cabinet Grotesk";
+    font-style: normal;
+    font-weight: 800;
+    font-size: 54px;
+    line-height: 111%;
+    color: $primary;
+    @include lg {
+      font-size: 40px;
+    }
+    @include sm {
+      font-size: 35px;
+    }
+    @include xs {
+      font-size: 30px;
+    }
+  }
+
+  &__title-right {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 150%;
+    color: $primary;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+      @include sm {
+        margin-bottom: 15px;
+      }
+    }
+    @include sm {
+      font-size: 18px;
+    }
+  }
+
+  &__subtitle {
+    line-height: 175%;
+    color: $secondary;
+  }
+}

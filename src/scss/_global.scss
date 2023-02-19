@@ -1,0 +1,225 @@
+// scroll burger off
+
+//body lock
+._lock {
+  overflow: hidden;
+}
+
+// global container
+
+[class*="__container"] {
+  max-width: 1920px;
+  margin: 0px auto;
+  padding: 0px 15px;
+  box-sizing: content-box;
+}
+
+// image ibg
+._ibg {
+  position: relative;
+}
+
+._ibg img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+}
+
+.action {
+  display: flex;
+  &__btn {
+    position: fixed;
+    top: 180px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    z-index: -1;
+    min-height: 100px;
+    padding: 0px 30px 0px 40px;
+    display: inline-flex;
+    align-items: center;
+    background: #ffffff;
+    box-shadow: 0px 30px 100px rgba(222, 135, 67, 0.15);
+    border-radius: 100px;
+    overflow: hidden;
+    gap: 20px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+    @include md {
+      top: unset;
+      bottom: 120px;
+      left: unset;
+      right: 20px;
+      transform: unset;
+      min-height: 50px;
+      padding: 0;
+    }
+
+    &._active {
+      opacity: 1;
+      z-index: 5;
+      &:hover {
+        .action__picture {
+          transform: rotate(40deg);
+        }
+      }
+    }
+    &._transform {
+      top: unset;
+      bottom: 120px;
+      left: unset;
+      right: 20px;
+      transform: unset;
+      opacity: 1;
+      z-index: 5;
+      min-height: 50px;
+      padding: 0;
+      animation: pulse 2s infinite;
+      &.action__btn {
+        background: unset;
+      }
+      &:hover {
+        .action__picture {
+          transform: rotate(40deg);
+        }
+      }
+      @include sm {
+        animation: unset;
+      }
+    }
+    &._transformSecond {
+      top: unset;
+      bottom: 50px;
+      left: unset;
+      right: 20px;
+      transform: unset;
+      opacity: 1;
+      z-index: 5;
+      min-height: 50px;
+      padding: 0;
+      animation: pulse 2s infinite;
+      &.action__btn {
+        background: unset;
+      }
+      &:hover {
+        .action__picture {
+          transform: rotate(40deg);
+        }
+      }
+      @include sm {
+        animation: unset;
+      }
+    }
+  }
+  &__picture {
+    transition: all 0.3s ease;
+    padding: 17px;
+    background: linear-gradient(360deg, #f2793f 0%, #ffb260 116.67%);
+    border-radius: 50px;
+  }
+
+  &__image {
+    width: 19px;
+    height: 19px;
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    &._dnone {
+      display: none;
+    }
+    span {
+      &:first-child {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #cc5633;
+      }
+      &:last-child {
+        font-family: "Cabinet Grotesk";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 75%;
+        text-transform: uppercase;
+        color: $primary;
+      }
+    }
+    @include md {
+      display: none;
+    }
+  }
+}
+
+//scroll
+
+.topBox {
+  opacity: 0;
+  position: fixed;
+  min-height: 50px;
+  padding: 17px;
+  background: #ff5f5f;
+  border-radius: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  right: 20px;
+  bottom: 50px;
+  -webkit-transition: 0.5s ease;
+  -o-transition: 0.5s ease;
+  transition: 0.5s ease;
+  svg {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+.topBox:hover {
+  background: #f84a4a;
+}
+
+.topBox._active {
+  z-index: 100;
+  opacity: 0.7;
+}
+
+// Animations
+// Fade
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.4);
+    transform: scale(1);
+  }
+  70% {
+    -moz-box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 10px rgba(204, 169, 44, 0);
+    transform: scale(1.1);
+  }
+  100% {
+    -moz-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    transform: scale(1);
+  }
+}

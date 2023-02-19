@@ -1,0 +1,131 @@
+.section-authors {
+  padding: 240px 0px;
+  background: #fff9fa;
+  @media (max-width: 1150px) {
+    padding: 200px 0px;
+  }
+  @include lg {
+    padding: 150px 0px;
+  }
+  @include md {
+    padding: 80px 0px;
+  }
+  @include sm {
+    padding: 50px 0px;
+  }
+  @include xs {
+    padding: 30px 0px;
+  }
+}
+.authors {
+  &__container {
+    max-width: 1520px;
+  }
+
+  &__slider {
+  
+    .swiper {
+      
+      &__buttons {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        z-index: 10;
+        @include xs {
+          margin-top: 30px;
+          position: relative;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    .swiper-slide {
+      display: flex;
+      position: relative;
+      gap: 70px;
+      @include lg {
+        flex-direction: column;
+        gap: 50px;
+      }
+      @include sm {
+        gap: 30px;
+      }
+    }
+    .slide-swiper {
+      &__picture {
+        @include lg {
+          text-align: center;
+        }
+      }
+
+      &__image {
+        @media (max-width: 1150px) {
+          max-width: 500px;
+        }
+        @include sm {
+          max-width: 100%;
+        }
+      }
+
+      &__text {
+        font-size: 54px;
+        line-height: 130%;
+        color: $secondary;
+        &:not(:last-child) {
+          margin-bottom: 50px;
+          @media (max-width: 1350px) {
+            margin-bottom: 20px;
+          }
+        }
+        @media (max-width: 1350px) {
+          font-size: 40px;
+        }
+        @media (max-width: 1150px) {
+          font-size: 32px;
+        }
+        @include sm {
+          font-size: 25px;
+        }
+      }
+
+      &__name {
+        font-family: "Cabinet Grotesk";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 40px;
+        line-height: 120%;
+        color: $primary;
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+        @media (max-width: 1150px) {
+          font-size: 25px;
+        }
+      }
+
+      &__position {
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 150%;
+        color: #195fc6;
+      }
+    }
+    .swiper-btn-prev,
+    .swiper-btn-next {
+      cursor: pointer;
+    }
+
+    .swiper-button-disabled {
+      circle {
+        fill: transparent;
+        stroke: #555d65;
+      }
+      path {
+        fill: #555d65;
+      }
+    }
+  }
+}
