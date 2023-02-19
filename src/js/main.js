@@ -90,6 +90,15 @@ function openModal() {
   modal.classList.remove("_transform");
   modal.classList.add("_active");
   modalContent.classList.remove("_dnone");
+  if (window.innerWidth < 768) {
+    modal.classList.add("_transform");
+    modal.classList.remove("_active");
+    modalContent.classList.add("_dnone");
+
+  }
+
+
+  
 }
 
 function clickModal() {
@@ -106,7 +115,7 @@ html.addEventListener("click", function (e) {
       modalContent.classList.add("_dnone");
     }
     if (window.innerWidth < 768) {
-      modal.classList.add("_active");
+      // modal.classList.add("_active");
       modal.classList.remove("_transform");
     } else {
       modal.classList.remove("_active");
